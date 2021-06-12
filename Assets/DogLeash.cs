@@ -21,6 +21,8 @@ public class DogLeash : MonoBehaviour
 
     public float ReLeashDistance = 5f;
 
+    public float DogMoveSpeed = 0.2f;
+
 
     void Start()
     {
@@ -79,6 +81,13 @@ public class DogLeash : MonoBehaviour
 
         lineRenderer.SetPositions(points);
 
+
+        // if dog is far away from the character start moving slowly to the character
+
+        if (playerDistance >= WarningDistance)
+        {
+            GetComponent<Transform>().position = Vector2.MoveTowards(points[1], points[0], DogMoveSpeed * 0.1f);
+        }
 
     }
 }
