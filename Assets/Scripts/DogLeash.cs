@@ -23,6 +23,8 @@ public class DogLeash : MonoBehaviour
 
     public float DogMoveSpeed = 0.2f;
 
+    private float timeAtOffLeash = -1f;
+
 
     void Start()
     {
@@ -48,9 +50,7 @@ public class DogLeash : MonoBehaviour
 
     void Update()
     {
-        LineRenderer lineRenderer = GetComponent<LineRenderer>();
-
-       
+        LineRenderer lineRenderer = GetComponent<LineRenderer>();       
 
         // Set LineRenderer to dog and player
         var points = new Vector3[2];
@@ -78,6 +78,7 @@ public class DogLeash : MonoBehaviour
         {
             OffLeash = true;
             Destroy(lineRenderer);
+            timeAtOffLeash = Time.time;
         }
 
         lineRenderer.SetPositions(points);
@@ -88,6 +89,11 @@ public class DogLeash : MonoBehaviour
         if (playerDistance >= WarningDistance - 2)
         {
             GetComponent<Transform>().position = Vector2.MoveTowards(points[1], points[0], DogMoveSpeed * 0.1f);
+        }
+
+        if (timeAtOffLeash != -1f && timeAtOffLeash + 10f <= Time.time)
+        {
+            GameObject.Find("GameTracker").GetComponent<GameScript>().LoseAnimal();
         }
 
     }

@@ -18,9 +18,18 @@ public class CheckpointScript : MonoBehaviour
         
     }
 
-    public static Transform GetRandomCheckpoint()
+    public Transform GetRandomCheckpoint()
     {
-        Transform checkpoint = Checkpoints[(int) Mathf.Round(Random.Range(1, Checkpoints.Length))];
+        Transform checkpoint = null;
+        if (Checkpoints == null )
+        {
+            Checkpoints = gameObject.GetComponentsInChildren<Transform>();
+        } 
+        if (Checkpoints != null)
+        {
+           checkpoint = Checkpoints[(int) Mathf.Round(Random.Range(1, Checkpoints.Length))];
+        }
+        
 
         return checkpoint;
     }

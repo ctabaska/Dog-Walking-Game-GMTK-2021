@@ -31,14 +31,25 @@ public class IdleBehavior : StateMachineBehaviour
                
             //    targetDog = colliders[0].gameObject;
                targetDog = colliders[(int)Mathf.Round(Random.Range(0, colliders.Length - 1))].gameObject;
+               foundDog = true;
            } else {
                targetDog = null;
            }
        }
 
-       if (targetDog != null)
+       if (targetDog != null && foundDog == true)
        {
-           animator.gameObject.transform.position = Vector2.MoveTowards(animator.gameObject.transform.position, targetDog.transform.position, animator.gameObject.GetComponent<NeighborScript>().moveSpeed * 0.1f);
+           if (Vector2.Distance(animator.gameObject.transform.position, targetDog.transform.position) <= 1f){
+               animator.gameObject.GetComponent<ParticleSystem>().Play();
+
+               GameObject.Find("GameTracker").GetComponent<GameScript>().RecruitAnimal();
+
+               targetDog = null;
+           } else {
+               animator.gameObject.transform.position = Vector2.MoveTowards(animator.gameObject.transform.position, targetDog.transform.position, animator.gameObject.GetComponent<NeighborScript>().moveSpeed * 0.1f);
+           
+           }
+            
        }
 
     }

@@ -1,0 +1,25 @@
+All the animals have 4 frames which must be combined as follows:
+
+
+frame 0 + 2 = Idle
+
+frame 0 + 1 = Walk
+
+frame 1 = Jump
+
+frame 2 = Crouch
+
+frame 3 = Hit / Defeated
+
+
+The gif in this file is used as an example of the animations
+
+_________________________________________________________________
+
+Permissions:
+
+You can use this asset pack for personal and commercial use.
+
+Credit is not required but would be appreciated. Made by PIXL VOID.
+
+You CAN NOT sell / redistribute this asset pack.
