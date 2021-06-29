@@ -40,9 +40,10 @@ public class GameInstance
 
         int checkpointCount = (int) Mathf.Round(Mathf.Sqrt(Round));
         Debug.Log($"Round: {Round}, Checkpoint count: {checkpointCount}");
+
         currentCheckpoints = new Checkpoint[checkpointCount];
         for (int i = 0; i < checkpointCount; i++) 
-            currentCheckpoints[i] = new Checkpoint(CheckpointPrefab, GetRandomCheckpoint());
+            currentCheckpoints[i] = new Checkpoint(GetRandomCheckpoint());
     }
 
     public Vector2 GetRandomCheckpoint()

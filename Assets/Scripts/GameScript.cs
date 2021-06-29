@@ -13,15 +13,20 @@ public class GameScript : MonoBehaviour
 
     public GameObject animalPrefab;
 
+    [SerializeField]private float AnimalSpawnRadius; // The radius that an animal can spawn around the player
+
     public GameObject neighborPrefab;
 
-    public GameObject[] Checkpoints;
+    public Vector2[] KeyPositions;
+    public static GameObject CheckpointPrefab;
+
+    //public GameObject[] Checkpoints;
 
     // Start is called before the first frame update
     void Start()
     {
-        Game.InstantiateGame();
-        //StartGame();
+        //Game.InstantiateGame();
+        StartGame();
     }
 
     // Update is called once per frame
@@ -31,20 +36,16 @@ public class GameScript : MonoBehaviour
     }
 
     public void StartGame(){
+        // move character to a randomly chosen location in keypositions
+        GameObject.Find("Player").transform.position = KeyPositions[(int)Mathf.Round(Random.Range(0, KeyPositions.Length - 1))];
+
         // create all animal objects
+
+        // move all animal objects to a random point in a circle
         
 
         // create all neighbor objects
         int Neightbors = (int)Mathf.Round(Random.Range(3, 8));
-
-        // create array of checkpoints
-        int objectivesAmount = (int)Mathf.Round(Random.Range(1, 4));
-        Debug.Log(objectivesAmount);
-        Checkpoints = new GameObject[objectivesAmount];
-        for (int i = 1; i <= objectivesAmount; i++)
-        {
-            Checkpoints[i-1] = GameObject.Find("Objective Creator").GetComponent<ObjectiveScript>().CreateObjective();
-        }
 
         //
     }

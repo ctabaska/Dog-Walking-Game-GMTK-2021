@@ -14,7 +14,7 @@ public class ObjectiveScript : MonoBehaviour
 
     void Awake()
     {
-        CreateObjective();
+        //CreateObjective();
     }
 
     // Start is called before the first frame update

@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class Checkpoint
 {
-    private GameObject _CheckpointPrefab;
-
     public bool Complete;
     public GameObject CheckpointObject;
 
-    public Checkpoint(GameObject prefab, Vector2 location)
+    public Checkpoint(Vector2 location)
     {
         Complete = false;
-        _CheckpointPrefab = prefab;
 
         CheckpointObject = CreateCheckpointObject(location);
+    }
+
+    public void SetActive(bool check)
+    {
+        CheckpointObject.SetActive(check);
     }
 
     private GameObject CreateCheckpointObject(Vector2 location)
     {
         
-        return GameObject.Instantiate(_CheckpointPrefab, location, Quaternion.identity) as GameObject;
+        return GameObject.Instantiate(GameScript.CheckpointPrefab, location, Quaternion.identity) as GameObject;
     }
 }

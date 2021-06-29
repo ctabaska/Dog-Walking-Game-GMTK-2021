@@ -137,8 +137,9 @@ GameObject:
   - component: {fileID: 59684416}
   - component: {fileID: 59684415}
   - component: {fileID: 59684417}
+  - component: {fileID: 59684418}
   m_Layer: 6
-  m_Name: Dog
+  m_Name: Pet
   m_TagString: Dog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -296,6 +297,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &59684418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59684411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2310a2ca61e4bd438482dcb3d93f84e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &139017694
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,7 +747,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00000011920929, y: 0, z: -10}
+  m_LocalPosition: {x: -0.00000023841858, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1559053173}
@@ -823,12 +836,29 @@ MonoBehaviour:
     - {x: 18, y: -14}
     - {x: 20, y: 0}
     - {x: 20, y: 19}
-  TotalAnimals: 0
+  TotalAnimals: 3
   AnimalsKept: 0
   AnimalsRecruited: 0
   animalPrefab: {fileID: 0}
+  AnimalSpawnRadius: 0
   neighborPrefab: {fileID: 0}
-  Checkpoints: []
+  KeyPositions:
+  - {x: -17, y: 13}
+  - {x: -9, y: 13}
+  - {x: 6, y: 13}
+  - {x: 15, y: 13}
+  - {x: -17, y: 1}
+  - {x: -9, y: 1}
+  - {x: 6, y: 4}
+  - {x: 18, y: 4}
+  - {x: -17, y: -8}
+  - {x: -9, y: -8}
+  - {x: 6, y: -8}
+  - {x: -9, y: -14}
+  - {x: 6, y: -14}
+  - {x: 18, y: -14}
+  - {x: 20, y: 0}
+  - {x: 20, y: 19}
 --- !u!4 &612632464
 Transform:
   m_ObjectHideFlags: 0
