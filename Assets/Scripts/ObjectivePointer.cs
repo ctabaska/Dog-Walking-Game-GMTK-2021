@@ -7,14 +7,14 @@ using CodeMonkey.Utils;
 public class ObjectivePointer : MonoBehaviour
 {
     [SerializeField] private Camera uiCamera;
-    private Vector3 targetPosition;
+    //private Vector3 targetPosition;
     public RectTransform pointerRectTransform;
 
     public float radius = 10;
 
     void Awake()
     {
-        targetPosition = GameObject.Find("Dog").transform.position;
+        //targetPosition = GameObject.Find("Dog").transform.position;
     }
     // Update is called once per frame
     void Update()

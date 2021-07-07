@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Diagnostics;
 using UnityEngine;
 
 public class DogLeash : MonoBehaviour
@@ -50,6 +49,8 @@ public class DogLeash : MonoBehaviour
 
     void Update()
     {
+        Player = GameObject.Find("Player");
+
         LineRenderer lineRenderer = GetComponent<LineRenderer>();       
 
         // Set LineRenderer to dog and player
@@ -88,11 +89,12 @@ public class DogLeash : MonoBehaviour
 
         if (playerDistance >= WarningDistance - 2)
         {
-            GetComponent<Transform>().position = Vector2.MoveTowards(points[1], points[0], DogMoveSpeed * 0.1f);
+            GetComponent<Rigidbody2D>().position = Vector2.MoveTowards(points[1], points[0], DogMoveSpeed * 0.13f);
         }
 
-        if (timeAtOffLeash != -1f && timeAtOffLeash + 10f <= Time.time)
+        if (OffLeash && timeAtOffLeash + 10f <= Time.time)
         {
+            Debug.Log("Hello?");
             GameObject.Find("GameTracker").GetComponent<GameScript>().LoseAnimal();
         }
 

@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 4644058732682198247}
   - component: {fileID: 4644058732682198246}
   - component: {fileID: 5365258814425860670}
+  - component: {fileID: 1506453237235259802}
   m_Layer: 0
-  m_Name: Objective
+  m_Name: Checkpoint
   m_TagString: Objective
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4882,3 +4883,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1506453237235259802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4644058732682198241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4086bdfb8821dc24abd0eb7fb9c93dd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

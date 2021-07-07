@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectiveScript : MonoBehaviour
 {
-    public Transform currentObjective;
+    /*public Transform currentObjective;
 
     [SerializeField]public GameObject ObjectivePrefab;
 
@@ -35,5 +35,5 @@ public class ObjectiveScript : MonoBehaviour
 
         return Instantiate(ObjectivePrefab, thisCheckpoint.position, Quaternion.identity);
       
-    }
+    }*/
 }

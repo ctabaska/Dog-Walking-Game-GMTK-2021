@@ -2,21 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
 public class GameInstance
 {
     public int Round;
-    public int NeighborCount;
-    public GameObject CheckpointPrefab;
 
     public Checkpoint [] currentCheckpoints;
 
-    public Vector2 [] AllCheckpoints;
-
-    public GameInstance()
+    public GameInstance(int round)
     {
-        //this.Round = round;
-        //InstantiateGame();
+       
     }
    
     public void ProgressCheckpoint()
@@ -34,6 +28,11 @@ public class GameInstance
         }
     }
 
+    public void Update()
+    {
+
+    }
+
     public void InstantiateGame()
     {
         int NeighborCount = (int) Mathf.Round(Mathf.Sqrt(3 * Round));
@@ -42,13 +41,13 @@ public class GameInstance
         Debug.Log($"Round: {Round}, Checkpoint count: {checkpointCount}");
 
         currentCheckpoints = new Checkpoint[checkpointCount];
-        for (int i = 0; i < checkpointCount; i++) 
-            currentCheckpoints[i] = new Checkpoint(GetRandomCheckpoint());
-    }
+        /*for (int i = 0; i < checkpointCount; i++) 
+            currentCheckpoints[i] = new Checkpoint(GetRandomCheckpoint());*/
+    }/*
 
     public Vector2 GetRandomCheckpoint()
     {
         return AllCheckpoints[(int)Mathf.Abs(Random.Range(0, AllCheckpoints.Length - 1))];
-    }
+    }*/
 
 }

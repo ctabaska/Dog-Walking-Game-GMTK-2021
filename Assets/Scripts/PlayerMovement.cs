@@ -41,12 +41,4 @@ public class PlayerMovement : MonoBehaviour
     {
         player.velocity = _playerDirection * PlayerSpeed;
     }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.tag == "Objective")
-        {
-            Destroy(col.gameObject);
-        }
-    }
 }
