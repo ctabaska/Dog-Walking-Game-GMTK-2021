@@ -31,7 +31,7 @@ public class Checkpoint
     public void CreateUIObjective(GameObject prefab, Vector2 location, GameObject parent)
     {
         Debug.Log("Hello");
-        UIObject = GameObject.Instantiate(prefab, parent.transform) as GameObject;
+        UIObject = GameObject.Instantiate(prefab, location, Quaternion.identity, parent.transform) as GameObject;
     }
 
     public void CompleteUIObjective()

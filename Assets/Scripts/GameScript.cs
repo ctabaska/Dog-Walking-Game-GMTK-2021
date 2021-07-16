@@ -28,6 +28,8 @@ public class GameScript : MonoBehaviour
 
     public GameObject UIObjectivePrefab;
     public GameObject UIParentObject;
+    public Transform UIParentLocation;
+    public float UIDistanceApart;
 
     public int Round;
 
@@ -70,7 +72,7 @@ public class GameScript : MonoBehaviour
         for (int i = 0; i <Checkpoints.Length; i++)
         {
             Checkpoints[i] = new Checkpoint(CheckpointPrefab, KeyPositions[(int)Mathf.Round(Random.Range(0, KeyPositions.Length))]);
-            Checkpoints[i].CreateUIObjective(UIObjectivePrefab, new Vector2(0f, 0f), UIParentObject);
+            Checkpoints[i].CreateUIObjective(UIObjectivePrefab, new Vector2(UIParentLocation.position.x + (i - (Checkpoints.Length / 2)) * UIDistanceApart, UIParentLocation.position.y), UIParentObject);
             Checkpoints[i].SetActive(false);
         }
         Checkpoints[0].SetActive(true);
